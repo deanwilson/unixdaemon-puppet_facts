@@ -18,8 +18,7 @@ Facter.add('ulimit') do
   confine :kernel => 'Linux'
 
   setcode do
-    pid = Process.pid
-    proc_file = "/proc/#{pid}/limits"
+    proc_file = '/proc/self/limits'
 
     limits = File.readlines(proc_file)
     limits.shift
