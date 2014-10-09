@@ -3,6 +3,10 @@ UnixDaemon Puppet Facts
 
 A collection of my facter facts that don't fit better in more specific repos
 
+ansible_facts :: Returns a data structure containing all the Ansible facts
+from the localhost. Very basic implementation.
+
+
 yumplugins :: Returns a data structure detailing the yum plugins present, enabled and disabled on the system. Requires facter2 and uses the structured fact support.
 
 ulimit :: Returns a data structure containing ulimit values for the currently running process.
