@@ -1,17 +1,16 @@
 # Fact: ansible_facts
 #
 # Purpose:
-# Returns a hash containing all the ansible facts from the 
-# localhost.
+#   Returns a hash containing all the ansible facts from the
+#   localhost.
 #
 # Resolution:
-# Runs the Ansible command with the setup module.
-# /etc/yum/pluginconf.d/*.conf file
+#   Runs the Ansible command with the setup module.
+#   /etc/yum/pluginconf.d/*.conf file
 #
 # Caveats:
-# Filters the results to only include ansible native facts. Otherwise you
-# can end up with ohai and facter facts also present in facter.
-
+#   Filters the results to only include ansible native facts. Otherwise you
+#   can end up with ohai and facter facts also present in facter.
 require 'json'
 
 Facter.add('ansible_facts') do
