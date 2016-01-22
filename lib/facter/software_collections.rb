@@ -1,12 +1,12 @@
 # Fact: software_collections
 #
-# Purpose: 
+# Purpose:
 #   Facts to expose the software collections available on the host
 #   and the scl puppet/facter is running under.
 #
 
 Facter.add('scl_available') do
-  confine :kernel => :linux
+  confine kernel: :linux
 
   setcode do
     scl_list = '/usr/bin/scl --list'
@@ -16,9 +16,8 @@ Facter.add('scl_available') do
   end
 end
 
-
 Facter.add('scl_enabled') do
-  confine :kernel => :linux
+  confine kernel: :linux
 
   if ENV.key?('X_SCLS')
     setcode do
