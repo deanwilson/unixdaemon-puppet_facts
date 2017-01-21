@@ -17,4 +17,17 @@ scl_available :: the software collection puppet/facter is running under
 
 yum_enabled_plugins :: Return a csv list of enabled yum plugins 
 
+### kvm_vms
 
+Returns three facts, each representing the KVM instances running on the host, in
+a different structure.
+
+ * kvm_vms - Returns a comma separated string containing the hostname
+  of each virtual machine on this host.
+
+ * kvm_vms_array - Returns an array of hashes. Each hash contains the `name`, `domain id`
+  and `state` of a virtual machine on this host.
+
+ * kvm_vms_hash Returns a hash. Each key is the hostname of a virtual machine on
+  this host. Each value is a hash containing the `name`, `domain id`
+  and `state` of that virtual machine.
